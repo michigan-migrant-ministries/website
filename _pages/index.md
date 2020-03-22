@@ -1,5 +1,6 @@
 ---
-order: 0
-title_short: "Home"
+order: 1
+permalink: /
+title: Home
 ---
 Home works!

@@ -6,40 +6,65 @@
     <meta name="description" content="{{ page.description }}">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <title>{{ page.title }}</title>
+    <title>{{ page.title }} - {{ site.organization }}</title>
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="col">
-          <h1>{{ page.title }}</h1>
+          <h1>{{ site.organization }}</h1>
         </div>
       </div>
 
-      <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            {% for pg in site.pages %}
-            <li class="nav-item">
-              <a class="nav-link{% if page.url == pg.url %} active{% endif %}" href="{{ pg.url }}">
-                {% if pg.title_short %}
-                  {{ pg.title_short }}
-                {% else %}
+      <!-- Nav/header for large screens -->
+      <div class="d-none d-lg-block">
+        <div class="row">
+          <div class="col">
+            <ul class="nav nav-tabs">
+              {% for pg in site.pages %}
+              <li class="nav-item">
+                <a class="nav-link{% if page.url == pg.url %} active{% endif %}" href="{{ pg.url }}">
                   {{ pg.title }}
-                {% endif %}
-              </a>
-            </li>
-            {% endfor %}
-          </ul>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
-      </nav>
+      </div>
 
-      <section class="container">
+      <!-- Nav/header for smaller screens -->
+      <div class="d-lg-none">
+        <div class="row">
+          <div class="col">
+            <div class="dropdown">
+              <a class="btn btn-outline-primary" href="{{ page.url }}" role="button" id="navDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons align-bottom">menu</i>
+              </a>
+            
+              <div class="dropdown-menu" aria-labelledby="navDropdownMenuLink">
+                {% for pg in site.pages %}
+                <a class="dropdown-item{% if page.url == pg.url %} active{% endif %}" href="{{ pg.url }}">
+                  {{ pg.title }}
+                </a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <h2>
+            {{ page.title }}
+          </h2>
+        </div>
+      </div>
+
+      <section>
         {{ content }}
       </section>
       <footer>
