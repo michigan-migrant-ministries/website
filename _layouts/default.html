@@ -12,57 +12,12 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col">
-          <h1>{{ site.organization }}</h1>
-          <h2>{{ page.title }}</h2>
-        </div>
-      </div>
-
-      <!-- Nav/header for large screens -->
-      <div class="d-none d-lg-block">
-        <div class="row">
-          <div class="col">
-            <ul class="nav nav-tabs">
-              {% for pg in site.pages %}
-              <li class="nav-item">
-                <a class="nav-link{% if page.url == pg.url %} active{% endif %}" href="{{ pg.url }}">
-                  {{ pg.title }}
-                </a>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Nav/header for smaller screens -->
-      <div class="d-lg-none">
-        <div class="row">
-          <div class="col">
-            <div class="dropdown">
-              <a class="btn btn-outline-primary" href="{{ page.url }}" role="button" id="navDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="material-icons align-bottom">menu</i>
-              </a>
-            
-              <div class="dropdown-menu" aria-labelledby="navDropdownMenuLink">
-                {% for pg in site.pages %}
-                <a class="dropdown-item{% if page.url == pg.url %} active{% endif %}" href="{{ pg.url }}">
-                  {{ pg.title }}
-                </a>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      {% include header.html %}
+      {% include navigation.html %}
       <section>
         {{ content }}
       </section>
-      <footer>
-        &copy; {{ site.organization }}
-      </footer>
+      {% include footer.html %}
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
