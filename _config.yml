@@ -35,3 +35,7 @@ defaults:
     values:
       layout: "default"
       description: Reaching our neighbors with the Gospel
+
+exclude:
+  - README.md
+  - LICENSE
