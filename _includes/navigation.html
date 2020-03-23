@@ -2,7 +2,7 @@
 <div class="d-none d-lg-block">
   <div class="row">
     <div class="col">
-      <ul class="nav nav-tabs">
+      <ul class="nav nav-pills justify-content-center">
         {% for pg in site.pages %}
         <li class="nav-item">
           <a class="nav-link{% if page.url == pg.url %} active{% endif %}" href="{{ pg.url }}">
@@ -19,17 +19,10 @@
 <div class="d-lg-none">
   <div class="row">
     <div class="col">
-      <h2>{{ page.title }}</h2>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-      <div class="dropdown">
+      <div class="dropdown position-absolute">
         <a class="btn btn-outline-primary" href="{{ page.url }}" role="button" id="navDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="material-icons align-bottom">menu</i>
         </a>
-      
         <div class="dropdown-menu" aria-labelledby="navDropdownMenuLink">
           {% for pg in site.pages %}
           <a class="dropdown-item{% if page.url == pg.url %} active{% endif %}" href="{{ pg.url }}">
@@ -38,6 +31,10 @@
           {% endfor %}
         </div>
       </div>
+
+      <h2 class="text-center">
+        {{ page.title }}
+      </h2>
     </div>
   </div>
 </div>

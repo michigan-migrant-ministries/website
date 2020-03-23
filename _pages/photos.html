@@ -1,0 +1,22 @@
+---
+order: 5
+title: Photos
+---
+<div class="row">
+  <div class="col">
+
+    <div class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        {% assign active = true %}
+        {% for photo in site.static_files %}
+        {% if photo.path contains "/assets/photos" %}
+        <div class="carousel-item{% if active %}{% assign active = false %} active{% endif %}">
+          <img style="object-fit: contain; height: 50vh;" class="w-100" src="{{ photo.path }}">
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</div>
