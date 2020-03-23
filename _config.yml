@@ -27,6 +27,9 @@ collections:
     output: true
     permalink: :name
     sort_by: order
+  testimonials:
+    output: false
+    sort_by: order
 
 defaults:
   -
