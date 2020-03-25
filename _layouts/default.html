@@ -17,18 +17,20 @@
   </head>
   <body class="text-justify">
     <div class="container">
-      <div class="card">
-        <div class="card-body">
-          <div class="card-title">
-            {% include header.html %}
-            {% include navigation.html %}
-          </div>
-          <div class="card-text">
-            {{ content }}
-          </div>
+      <div class="list-group list-group-flush">
+        <div class="list-group-item">
+          {% include header.html %}
+        </div>
+        <div class="list-group-item">
+          {% include navigation.html %}
+        </div>
+        <div class="list-group-item">
+          {{ content }}
+        </div>
+        <div class="list-group-item">
+          {% include footer.html %}
         </div>
       </div>
-      {% include footer.html %}
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
