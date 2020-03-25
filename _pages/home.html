@@ -3,25 +3,20 @@ order: 1
 permalink: /
 title: Home
 ---
-<div class="row">
-  <div class="col">
+<h1>Our purpose</h1>
+<p>
+  From April to October of each year, Berrien County teems with Mexicans who
+  come to work a seasonal agricultural job. We focus on teaching the Word of
+  God to these Migrant families so that they might hear the Gospel, believe on
+  the Lord Jesus, and be discipled in their new life with Christ.
+</p>
 
-    <h3>Our purpose</h3>
-    <p>
-      From April to October of each year, Berrien County teems with Mexicans who come to work a seasonal agricultural
-      job. We focus on teaching the Word of God to these Migrant families so that they might hear the Gospel, believe on
-      the Lord Jesus, and be discipled in their new life with Christ.
-    </p>
-
-    <h3>Testimonials</h3>
-    {% for testimonial in site.testimonials %}
-    <div class="row {% cycle "justify-content-start", "justify-content-end" %}">
-      <div class="col-9 {% cycle "text-left", "text-right" %}">
-        {{ testimonial.content }}<br/>
-        &mdash;<i>{{ testimonial.author }}</i>
-      </div>
-    </div>
-    {% endfor %}
-
+<h1>Testimonials</h1>
+{% for testimonial in site.testimonials %}
+<div class="row {% cycle "justify-content-start", "justify-content-end" %}">
+  <div class="col-9 {% cycle "text-left", "text-right" %}">
+    {{ testimonial.content }}<br/>
+    &mdash;<i>{{ testimonial.author }}</i>
   </div>
 </div>
+{% endfor %}

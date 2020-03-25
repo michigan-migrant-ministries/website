@@ -7,23 +7,30 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+      h1, h2, h3, h4, h5, h6 {
+        text-align: left;
+      }
+    </style>
 
     <title>{{ page.title }} - {{ site.organization }}</title>
   </head>
   <body class="text-justify">
     <div class="container">
-      <div class="card">
-        <div class="card-body">
-          <div class="card-title">
-            {% include header.html %}
-            {% include navigation.html %}
-          </div>
-          <div class="card-text">
-            {{ content }}
-          </div>
+      <div class="list-group list-group-flush">
+        <div class="list-group-item">
+          {% include header.html %}
+        </div>
+        <div class="list-group-item">
+          {% include navigation.html %}
+        </div>
+        <div class="list-group-item">
+          {{ content }}
+        </div>
+        <div class="list-group-item">
+          {% include footer.html %}
         </div>
       </div>
-      {% include footer.html %}
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
