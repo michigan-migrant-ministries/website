@@ -10,7 +10,11 @@ Follow these steps to set up your development environment:
 
 1. Install Jekyll - https://jekyllrb.com/docs/installation/
 1. Clone this repository
-1. Run this command line:
+1. Run this command to install other project dependencies:
+   ```
+   bundle install
+   ```
+1. Run this command to build and serve this site:
    ```
    jekyll serve --watch
    ```
