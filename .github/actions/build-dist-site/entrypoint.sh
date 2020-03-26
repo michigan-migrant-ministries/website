@@ -14,6 +14,7 @@ REMOTE_REPO="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSIT
 # We need to clone the repo here.
 # Remember, our Docker container is practically pristine at this point
 git clone $REMOTE_REPO repo
+git clone $REMOTE_REPO repo/_site -b gh-pages
 cd repo
 
 # Install all of our dependencies inside the container
@@ -29,21 +30,17 @@ echo "Jekyll build done"
 # Now lets go to the generated folder by Jekyll
 # and perform everything else from there
 cd _site
-
 echo "☁️ Publishing website"
-
-# Now we init a new git repository inside _site
-# So we can perform a commit
-git init
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-git add .
+git add -A
+git status
 # That will create a nice commit message with something like:
 # Github Actions - Fri Sep 6 12:32:22 UTC 2019
 git commit -m "Github Actions - $(date)"
 echo "Build branch ready to go. Pushing to Github..."
 # Force push this update to our gh-pages
-git push --force $REMOTE_REPO master:gh-pages
+git push --force $REMOTE_REPO gh-pages:gh-pages
 # Now everything is ready.
 # Lets just be a good citizen and clean-up after ourselves
 rm -fr .git
