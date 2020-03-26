@@ -42,3 +42,7 @@ defaults:
 exclude:
   - README.md
   - LICENSE
+
+sass:
+  sass_dir: assets/css
+  style: compressed

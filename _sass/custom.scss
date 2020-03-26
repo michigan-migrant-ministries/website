@@ -1,0 +1,40 @@
+$font-family-base: 'Merriweather', serif;
+$font-weight-normal: 300;
+$headings-font-family: 'Raleway', sans-serif;
+$headings-font-weight: 700;
+@import "../../_sass/bootstrap/bootstrap";
+b {
+  font-weight: 700;
+}
+body {
+  margin-bottom: 32px;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-align: left;
+}
+html {
+  min-height: 100%;
+  position: relative;
+}
+.nav {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  a:hover:not(.active) {
+    border-style: solid;
+    border-width: $btn-border-width;
+    border-color: $primary;
+    color: $primary;
+    margin: -$btn-border-width;
+  }
+}
+q {
+  quotes: '“' '”' "‘" "’";
+}
+.toe {
+  color: #ccc;
+  font-size: 0.8em;
+  font-style: italic;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
