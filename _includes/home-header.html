@@ -1,4 +1,6 @@
-<div class="home-header d-flex flex-column align-items-center justify-content-end">
+{% assign bg_img = "/assets/img/camp-entrance.jpg" %}
+<div class="home-header d-flex flex-column align-items-center justify-content-end" style="background-image: url('{{ bg_img }}');">
+  <img style="display: none;" src="{{ bg_img }}" alt="">
   <div class="list-group-item">
     <h1 class="text-center">
       {{ site.organization }}
