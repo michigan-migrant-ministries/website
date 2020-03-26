@@ -31,6 +31,7 @@ echo "Jekyll build done"
 # and perform everything else from there
 cd _site
 echo "☁️ Publishing website"
+touch .nojekyll
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 git add -A
