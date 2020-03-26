@@ -12,11 +12,16 @@
     <title>{{ page.title }} - {{ site.organization }}</title>
   </head>
   <body class="text-justify">
+    {% if page.url == "/" %}
+    {% include home-header.html %}
+    {% endif %}
     <div class="container">
       <div class="list-group list-group-flush">
+        {% if page.url != "/" %}
         <div class="list-group-item">
           {% include header.html %}
         </div>
+        {% endif %}
         <div class="list-group-item">
           {% include navigation.html %}
         </div>

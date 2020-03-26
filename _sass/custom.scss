@@ -10,6 +10,21 @@ b {
 h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
+.home-header {
+  background-position: right;
+  background-image: url("/assets/img/camp-entrance.jpg");
+  background-size: cover;
+  height: 100vh;
+
+  > * {
+    background-color: white;
+    background-color: rgba($color: white, $alpha: 0.7);
+    border: unset;
+    border-radius: unset!important;
+    margin: 0;
+    width: 100%;
+  }
+}
 html {
   min-height: 100%;
   position: relative;
