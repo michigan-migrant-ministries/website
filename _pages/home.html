@@ -13,10 +13,8 @@ title: Home
 
 <h1>Testimonials</h1>
 {% for testimonial in site.testimonials %}
-<div class="row {% cycle "justify-content-start", "justify-content-end" %}">
-  <div class="col-9 {% cycle "text-left", "text-right" %}">
-    {{ testimonial.content }}<br/>
-    &mdash;<i>{{ testimonial.author }}</i>
-  </div>
-</div>
+<p>
+  {{ testimonial.content }}<br/>
+  &mdash;<i>{{ testimonial.author }}</i>
+</p>
 {% endfor %}
