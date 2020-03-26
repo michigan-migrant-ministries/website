@@ -7,6 +7,16 @@ $headings-font-weight: 700;
 b {
   font-weight: 700;
 }
+.carousel {
+  background-color: black;
+  padding-bottom: 35px;
+  .carousel-indicators {
+    background-color: rgba($color: black, $alpha: 0.7);
+    bottom: 0;
+    margin: 0;
+    padding: 1em;
+  }
+}
 h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
