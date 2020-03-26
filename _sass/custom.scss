@@ -7,9 +7,6 @@ $headings-font-weight: 700;
 b {
   font-weight: 700;
 }
-body {
-  margin-bottom: 32px;
-}
 h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
@@ -27,12 +24,4 @@ html {
     color: $primary;
     margin: -$btn-border-width;
   }
-}
-.toe {
-  color: #ccc;
-  font-size: 0.8em;
-  font-style: italic;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
 }
