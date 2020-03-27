@@ -4,22 +4,23 @@ title: Photos
 ---
 <style>
   img {
+    margin: 0.25rem;
     object-fit: cover;
   }
   @media (orientation: landscape) {
     img {
-      height: 12vw;
-      margin: 1vw;
+      height: 20vw;
+      width: 20vw;
     }
   }
   @media (orientation: portrait) {
     img {
-      height: 12vh;
-      margin: 1vh;
+      height: 20vh;
+      width: 20vh;
     }
   }
 </style>
-<div class="d-flex flex-row flex-wrap justify-content-center" style="margin: -1vh;">
+<div class="d-flex flex-row flex-wrap justify-content-center" style="margin: -0.25rem;">
   {% for photo in site.static_files %}
   {% if photo.path contains "/assets/photos" %}
   <img src="{{ photo.path }}">
