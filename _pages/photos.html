@@ -2,33 +2,27 @@
 order: 5
 title: Photos
 ---
-<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000" data-keyboard="true">
-  <ol class="carousel-indicators">
-    {% assign index = 0 %}
-    {% for photo in site.static_files %}
-    {% if photo.path contains "/assets/photos" %}
-    <li data-target="#carousel" data-slide-to="{{ index }}"{% if index == 0 %} class="active"{% endif %}></li>
-    {% assign index = index | plus: 1 %}
-    {% endif %}
-    {% endfor %}
-  </ol>
-  <div class="carousel-inner">
-    {% assign index = 0 %}
-    {% for photo in site.static_files %}
-    {% if photo.path contains "/assets/photos" %}
-    <div class="carousel-item{% if index == 0 %} active{% endif %}">
-      <img style="object-fit: contain; height: 50vh;" class="w-100" src="{{ photo.path }}">
-    </div>
-    {% assign index = index | plus: 1 %}
-    {% endif %}
-    {% endfor %}
-  </div>
-  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+<style>
+  img {
+    object-fit: cover;
+  }
+  @media (orientation: landscape) {
+    img {
+      height: 12vw;
+      margin: 1vw;
+    }
+  }
+  @media (orientation: portrait) {
+    img {
+      height: 12vh;
+      margin: 1vh;
+    }
+  }
+</style>
+<div class="d-flex flex-row flex-wrap justify-content-center" style="margin: -1vh;">
+  {% for photo in site.static_files %}
+  {% if photo.path contains "/assets/photos" %}
+  <img src="{{ photo.path }}">
+  {% endif %}
+  {% endfor %}
 </div>
