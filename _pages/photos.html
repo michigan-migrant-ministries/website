@@ -3,8 +3,10 @@ order: 5
 title: Photos
 ---
 <style>
-  img {
+  .img-container {
     margin: 0.25rem;
+  }
+  img {
     object-fit: cover;
   }
   @media (orientation: landscape) {
@@ -23,7 +25,9 @@ title: Photos
 <div class="d-flex flex-row flex-wrap justify-content-center" style="margin: -0.25rem;">
   {% for photo in site.static_files %}
   {% if photo.path contains "/assets/photos" %}
-  <img src="{{ photo.path }}">
+  <a class="img-container" href="{{ photo.path }}" target="_blank">
+    <img src="{{ photo.path }}">
+  </a>
   {% endif %}
   {% endfor %}
 </div>
