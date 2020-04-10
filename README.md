@@ -1,8 +1,6 @@
 # Michigan Migrant Ministries
 
-Source code for the future replacement of https://michiganmigrantministries.com/
-
-Currently deployed to https://mmm.matthewathomas.com/
+https://www.michiganmigrantministries.com/
 
 ## Getting started
 
@@ -32,6 +30,6 @@ Github automatically deployes changes to the `master` branch according to this f
 .github/workflows/deploy-workflow.yml
 ```
 
-Github pages is configured on this repository to serve files for the `mmm.matthewathomas.com` domain.
+Github pages is configured on this repository to serve files for the `www.michiganmigrantministries.com` domain.
 
 DNS is configured for that domain to point to Github.
