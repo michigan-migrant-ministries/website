@@ -46,3 +46,6 @@ exclude:
 sass:
   sass_dir: assets/css
   style: compressed
+
+plugins:
+  - jekyll-redirect-from
